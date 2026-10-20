@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>富姐姐的文章 · The Rich Sis</title>
+<meta name="description" content="富姐姐 Andrea Wong 的理财文章：存钱、投资，和那些没人教我们的钱的事。">
+<meta property="og:title" content="富姐姐的文章 · The Rich Sis">
+<meta property="og:description" content="每个普通女生，都值得一个适合自己的财富下一步。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFAF5;
+    --card:#FFFFFF;
+    --ink:#1C1A2E;
+    --muted:#77708A;
+    --line:#F0E6DC;
+    --purple:#7C5CC9;
+    --lavender:#B49CE8;
+    --soft:#F1EAFB;
+    --orange:#FF6535;
+    --gold:#FFD166;
+    --grad:linear-gradient(135deg,#FF8354 0%,#FF6535 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Noto Sans SC",system-ui,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(255,250,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:10px}
+  .brand{font-family:"Noto Serif SC",serif;font-weight:700;font-size:18px;color:var(--purple);white-space:nowrap}
+  .brand small{font-family:"Noto Sans SC",sans-serif;font-weight:500;font-size:12px;color:var(--muted);margin-left:6px;letter-spacing:.04em}
+  .right{display:flex;align-items:center;gap:8px}
+  .lang{font:inherit;font-size:13px;font-weight:500;color:var(--purple);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+  .lang:hover{border-color:var(--lavender)}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--grad);color:#fff;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(255,101,53,.25);white-space:nowrap}
+  @media (max-width:420px){ .brand small{display:none} .pill{padding:8px 12px} }
+
+  /* home */
+  .hero{padding:56px 0 36px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.12em;color:var(--purple);background:var(--soft);padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-family:"Noto Serif SC",serif;font-size:clamp(26px,6vw,36px);line-height:1.4;font-weight:700}
+  .hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,#E7DCFB 62%)}
+  .hero p{color:var(--muted);margin-top:14px;font-size:15px}
+  .section-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted);margin:8px 0 14px}
+  .list{display:grid;gap:14px;padding-bottom:56px}
+  .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px;transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(28,26,46,.07)}
+  .card .series{font-size:12px;color:var(--purple);font-weight:500}
+  .card h2{font-family:"Noto Serif SC",serif;font-size:19px;line-height:1.5;margin:6px 0 8px}
+  .card p{font-size:14px;color:var(--muted)}
+  .meta{font-size:12px;color:var(--muted);margin-top:12px}
+
+  /* article */
+  .article{padding:36px 0 24px}
+  .back{font-size:14px;color:var(--muted)}
+  .back:hover{color:var(--purple)}
+  .article .series{display:inline-block;margin-top:24px;font-size:13px;font-weight:500;color:var(--purple);background:var(--soft);padding:3px 12px;border-radius:999px}
+  .article h1{font-family:"Noto Serif SC",serif;font-size:clamp(24px,5.6vw,32px);line-height:1.45;margin:14px 0 10px}
+  .article .meta{margin:0 0 28px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .autonote{display:inline-block;font-size:12px;color:var(--muted);background:var(--soft);border-radius:8px;padding:2px 8px;margin-left:6px}
+  .body p{font-size:17px;line-height:2;margin-bottom:18px}
+  .body strong{color:var(--purple);font-weight:700}
+  .body blockquote{font-family:"Noto Serif SC",serif;font-size:19px;line-height:1.6;color:var(--purple);border-left:3px solid var(--lavender);padding:6px 0 6px 18px;margin:22px 0}
+  .body hr{border:none;text-align:center;margin:30px 0}
+  .body hr::after{content:"· · ·";color:var(--lavender);letter-spacing:.5em;font-size:18px}
+  .steps{list-style:none;display:grid;gap:10px;margin:18px 0 22px}
+  .steps li{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:16px}
+  .steps li b{flex:none;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;font-size:13px;display:grid;place-items:center;margin-top:2px}
+
+  .cta{background:linear-gradient(140deg,#F3ECFD 0%,#FFF1EA 100%);color:var(--ink);border:1.5px solid #EADFFB;border-radius:22px;padding:28px 24px;margin:36px 0 18px;box-shadow:none}
+  .cta .tag{font-size:12px;letter-spacing:.12em;color:var(--purple);font-weight:700}
+  .cta h3{font-family:"Noto Serif SC",serif;font-size:22px;line-height:1.45;margin:8px 0 8px}
+  .cta p{font-size:15px;color:var(--muted)}
+  .cta a{display:inline-block;margin-top:18px;background:var(--orange);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;font-size:15px}
+
+  .ask{background:var(--card);border:1px dashed var(--lavender);border-radius:18px;padding:22px;margin-bottom:28px}
+  .ask .q{font-family:"Noto Serif SC",serif;font-size:18px;line-height:1.55;margin:6px 0 10px}
+  .ask .tag{font-size:12px;letter-spacing:.12em;color:var(--purple);font-weight:700}
+  .ask a{color:var(--purple);font-weight:500;font-size:14px}
+  /* poll */
+  .poll{display:grid;gap:10px;margin-top:14px}
+  .opt{font:inherit;display:flex;align-items:center;gap:12px;text-align:left;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;transition:border-color .15s,transform .15s}
+  .opt:hover{border-color:var(--lavender);transform:translateY(-1px)}
+  .opt.picked{border-color:var(--orange);background:#FFF1EB;animation:pop .35s ease}
+  .opt.picked .ico{animation:bounce .6s ease}
+  @keyframes pop{50%{transform:scale(1.04)}}
+  @keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-8px) rotate(-10deg)}60%{transform:translateY(0) rotate(8deg)}}
+  .react{text-align:center;font-size:15px;font-weight:700;color:var(--ink);background:#FFF1EB;border-radius:14px;padding:10px 14px;margin-bottom:14px;animation:pop .4s ease}
+  .opt:disabled{cursor:default}
+  .opt .ico{flex:none;width:38px;height:38px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:19px}
+  .opt .txt{font-size:15px;font-weight:500;line-height:1.45}
+
+  .cols{display:flex;align-items:flex-start;justify-content:center;gap:clamp(14px,5vw,34px);padding:8px 4px 0}
+  .col{flex:1;max-width:120px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .col .pct{font-family:"Noto Serif SC",serif;font-size:22px;font-weight:700;color:var(--muted);margin-bottom:6px}
+  .col.me .pct{color:var(--orange)}
+  .col .track{width:100%;max-width:64px;height:150px;background:#F5F0FB;border-radius:14px;display:flex;align-items:flex-end;overflow:hidden}
+  .col .fill{width:100%;height:0;background:#DCCFF7;border-radius:14px;transition:height 1s cubic-bezier(.2,.8,.2,1)}
+  .col.me .fill{background:var(--grad)}
+  .col .ico{font-size:20px;margin-top:10px}
+  .col .lbl{font-size:13px;line-height:1.5;color:var(--text);margin-top:2px}
+  .col.me .lbl{color:var(--orange);font-weight:700}
+  .col .you{font-size:11px;font-weight:700;color:#fff;background:var(--orange);border-radius:999px;padding:1px 9px;margin-top:6px}
+  .poll-foot{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+  .loading{font-size:13px;color:var(--muted)}
+
+  /* comments */
+  .comments{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:28px}
+  .comments h4{font-family:"Noto Serif SC",serif;font-size:18px;margin-bottom:14px}
+  .comments h4 span{font-family:"Noto Sans SC",sans-serif;font-size:13px;color:var(--muted);font-weight:400;margin-left:6px}
+  .cform{display:grid;gap:10px;margin-bottom:18px}
+  .cform input,.cform textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;outline:none;width:100%}
+  .cform input:focus,.cform textarea:focus{border-color:var(--lavender);background:#fff}
+  .cform textarea{min-height:90px;resize:vertical;line-height:1.7}
+  .cform .bottom{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .cform .hint{font-size:12px;color:var(--muted)}
+  .cform button{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:10px 20px;cursor:pointer;white-space:nowrap}
+  .cform button:disabled{opacity:.5;cursor:default}
+  .clist{display:grid;gap:4px}
+  .c{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+  .c .av{flex:none;width:36px;height:36px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:15px;display:grid;place-items:center}
+  .c .who{font-size:14px;font-weight:700}
+  .c .who small{font-weight:400;color:var(--muted);font-size:12px;margin-left:6px}
+  .c .pick{display:inline-block;font-size:12px;color:var(--purple);background:var(--soft);border-radius:999px;padding:1px 9px;margin:4px 0 2px}
+  .c p{font-size:15px;line-height:1.75;white-space:pre-wrap;word-break:break-word}
+  .empty{font-size:14px;color:var(--muted);padding:6px 0}
+
+  .more{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted);padding:6px 0 48px}
+  .more a:hover{color:var(--purple)}
+  .loading-page{padding:80px 0;text-align:center;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:13px;color:var(--muted);text-align:center}
+  footer a{color:var(--purple)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#/">富姐姐<small>The Rich Sis</small></a>
+    <div class="right">
+      <button class="lang" id="langBtn">EN</button>
+      <a class="pill" id="navDna" href="#" target="_blank" rel="noopener">测我的财富 DNA</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  <div class="wrap">
+    Instagram <a href="https://instagram.com/therichsis39" target="_blank" rel="noopener">@therichsis39</a> · © 2026 The Rich Sis
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   网站设定
+   ============================================================ */
+const SITE = {
+  dnaUrl: "https://wealthdna-my.netlify.app",
+  igUrl: "https://instagram.com/therichsis39",
+  igHandle: "@therichsis39"
+};
+
+/* ============================================================
+   ✍️ 文章都放在这里 —— 新文章加在最上面
+   ------------------------------------------------------------
+   写法小规则（body 里）：
+   · 每一行 = 一个段落
+   · ———           → 分隔符
+   · 「……」整行    → 大字引言
+   · ① ② ③ 开头    → 步骤卡片
+   · **文字**       → 紫色重点
+
+   🌏 英文版：
+   · 有写 en: { ... } → 用你写的英文
+   · 没写 en          → 读者按 EN 时网站自动翻译（会标示「Auto-translated」）
+   ============================================================ */
+const ARTICLES = [
+  {
+    slug: "your-next-step-rm5000",
+    series: "你的下一步",
+    title: "月薪 RM5,000，月底只剩 RM200，你的下一步是什么？",
+    date: "2026-10-20",
+    summary: "朋友问我：是不是应该开始投资了？如果是我，我不会急着叫她投资。",
+    cta: {
+      title: "同样月薪 RM5,000，你的下一步可能和她不一样。",
+      text: "做一次财富 DNA 测评，看看你是哪一种理财性格，以及现在最适合你的下一步。"
+    },
+    question: "如果你月薪 RM5,000，月底只剩 RM200，你会选择先省钱、增加收入，还是开始投资？",
+    // 投票选项：A=保守/守  B=规划  C=进攻  D=享受  E=拖延（和 DNA 测评同一套代码）
+    poll: [
+      { key: "A", emoji: "🛡️", label: "先省钱，存好应急金" },
+      { key: "B", emoji: "📈", label: "先想办法增加收入" },
+      { key: "C", emoji: "🚀", label: "直接开始投资" }
+    ],
+    body: `
+到了30岁这个年纪，身边的人开始只讲2件事，赚钱和存钱。
+有个朋友问我，月薪 RM5,000，每个月扣掉 EPF、SOCSO、房租、车贷、吃饭、保险、交通和生活开销，月底剩 RM200。
+她问我：
+「我是不是应该开始投资了？不然什么时候才能变有钱？」
+但如果是我，我不会急着叫她投资。
+你们知道很多【稳】的投资，其实都是有资金需求的，动不动就 Min requirement RM250k.
+可是很多时候，投资根本不合适每个人。因为这个朋友没有足够的缓冲期。
+我时常会看到别人因为紧急事情而亏着卖股票。
+**有些人投资，是拿闲钱，有些人投资是拿救命钱。**
+我投资，是拿闲钱投资，我可以一阵子都不会用到他们。
+3年，5年，10年，我有足够的储备金，够我说走就走，够我应对紧急事情。
+我先存储备金，我才用多余的钱去做投资。
+但很多人，却是身上没留钱，一有事情起来就慌张。
+———
+假设她每个月只能存 RM200，一年就是 RM2,400。
+如果突然需要 RM3,000 修车，或者失业两个月，她怎么办？
+刷信用卡？借钱？还是把刚买的投资卖掉？
+所以我觉得，理财有一个很重要的观念：
+**不是每个人的下一步，都应该是投资。**
+有些人应该先还清高息债务。
+有些人应该先建立应急金。
+有些人已经有足够的现金储备，才适合开始长期投资。
+还有一些人，真正需要解决的是收入问题。
+同样月薪 RM5,000 的两个女生，因为资产、债务和生活负担不同，她们的下一步也可能完全不一样。
+如果我是这个女生，我会先做三件事：
+① 算清楚每个月的钱去了哪里。
+② 找出有没有办法每个月多留下 RM300–500，而不是一开始就逼自己过得很辛苦。
+③ 先建立一笔现金缓冲，再根据自己的情况规划投资。
+当然，如果必要开销已经压得很低，就不能一直靠省钱解决问题。
+提高收入也应该成为计划的一部分。
+———
+我一直觉得，**财富不是从你买下第一只股票开始的，而是从你做出第一个适合自己的财务决定开始的。**
+你不需要今天就变有钱。
+但你应该知道，今天的自己，下一步该做什么。
+我希望每个普通女生，都能根据自己的财务状况，找到适合自己的财富行动，一步一步累积资产。
+`,
+    en: {
+      series: "Your Next Step",
+      title: "Earning RM5,000 a month, with only RM200 left at the end of it — what's your next step?",
+      summary: "A friend asked me: should I start investing now? If it were me, I wouldn't rush her into it.",
+      cta: {
+        title: "Same RM5,000 salary — your next step might look nothing like hers.",
+        text: "Take the WealthDNA assessment to discover your money personality, and the next step that fits you right now."
+      },
+      question: "If you earned RM5,000 a month with only RM200 left over, would you save first, grow your income, or start investing?",
+      poll: ["Save first and build an emergency fund", "Find ways to grow my income first", "Start investing right away"],
+      body: `
+Once you hit 30, the people around you start talking about just two things: making money and saving money.
+A friend told me she earns RM5,000 a month. After EPF, SOCSO, rent, car loan, food, insurance, transport and daily expenses, she has RM200 left at the end of the month.
+She asked me:
+「Should I start investing already? Otherwise, when will I ever get rich?」
+But if it were me, I wouldn't rush her into investing.
+A lot of "safe" investments actually come with capital requirements — often a minimum of RM250k.
+And very often, investing simply isn't right for everyone. My friend doesn't have enough of a buffer yet.
+I often see people forced to sell their stocks at a loss because of an emergency.
+**Some people invest with spare money. Some invest with the money they'd need to survive.**
+I invest with spare money — money I won't need to touch for a long while.
+3 years, 5 years, 10 years — I have enough reserves to pack up and go whenever I want, and to handle any emergency.
+I build my reserves first, and only then invest what's left over.
+But many people keep nothing on hand, and panic the moment something happens.
+———
+Say she can only save RM200 a month. That's RM2,400 a year.
+What if she suddenly needs RM3,000 to fix her car, or loses her job for two months?
+Credit card? Borrow money? Or sell the investments she just bought?
+That's why I think one idea matters more than most in personal finance:
+**Not everyone's next step should be investing.**
+Some people should pay off high-interest debt first.
+Some people should build an emergency fund first.
+Some people already have enough cash reserves, and are ready for long-term investing.
+And for some, the real problem to solve is income.
+Two women earning the same RM5,000 can have completely different next steps, because their assets, debts and responsibilities are different.
+If I were her, I'd do three things first:
+① Work out exactly where my money goes every month.
+② Find a way to keep an extra RM300–500 each month — without forcing myself to live miserably from day one.
+③ Build a cash buffer first, then plan my investments around my own situation.
+Of course, if essential spending is already cut to the bone, saving alone can't fix the problem.
+Growing your income should be part of the plan too.
+———
+I've always believed that **wealth doesn't start when you buy your first stock. It starts when you make your first financial decision that's right for you.**
+You don't need to get rich today.
+But you should know what your next step is, today.
+I hope every ordinary woman can find the money moves that fit her own situation, and build her assets one step at a time.
+`
+    }
+  }
+];
+
+/* ============================================================
+   以下是网站程序，平时不用改
+   ============================================================ */
+const T = {
+  zh: {
+    toggle: "EN", htmlLang: "zh-Hans", nav: "测我的财富 DNA",
+    eyebrow: "富姐姐的文章",
+    h1: "每个普通女生，都值得一个<em>适合自己</em>的财富下一步。",
+    intro: "我是 Andrea，富姐姐，CFP 认证理财规划师。这里收录我写的文章——关于存钱、投资，和那些没人教我们的钱的事。",
+    all: n => `全部文章 · ${n} 篇`, read: m => `${m} 分钟阅读`, back: "← 全部文章", by: "富姐姐",
+    series: s => `《${s}》`, ctaBtn: "测测我的财富 DNA →", ask: "💬 你会怎么选？",
+    ig: h => `想说说为什么？来 Instagram 告诉我 ${h} →`, loading: "正在看大家的选择…", mine: "你的选择",
+    total: n => `${n} 位读者做了选择`, first: "你是第一个做选择的人",
+    reactSame: n => `🙌 你和 ${n}% 的读者想法一样`, reactFew: n => `✨ 你是少数派，只有 ${n}% 的人跟你一样`, reactFirst: "🎉 你是第一个投票的人！", top: "最多人选", change: "",
+    cTitle: "留言区", cCount: n => `· ${n} 条`, cName: "你的名字（可不填）", cBody: "你会怎么选？为什么？", cHint: "留言会公开显示",
+    cSend: "发布留言", cSending: "发布中…", cLoading: "正在载入留言…", cEmpty: "还没有人留言，来当第一个吧 ✨",
+    cAnon: "匿名读者", cPicked: "选了", cFail: "发布失败，请再试一次",
+    ago: s => s < 60 ? "刚刚" : s < 3600 ? `${Math.floor(s/60)} 分钟前` : s < 86400 ? `${Math.floor(s/3600)} 小时前` : `${Math.floor(s/86400)} 天前`,
+    date: d => { const [y,m,day] = d.split("-"); return `${y}年${+m}月${+day}日`; },
+    siteTitle: "富姐姐的文章 · The Rich Sis", translating: "", auto: ""
+  },
+  en: {
+    toggle: "中文", htmlLang: "en", nav: "Find my WealthDNA",
+    eyebrow: "Articles by The Rich Sis",
+    h1: "Every ordinary woman deserves a next money step that <em>fits her</em>.",
+    intro: "I'm Andrea — The Rich Sis, a Certified Financial Planner. This is where I share what I write about saving, investing, and the money lessons nobody taught us.",
+    all: n => `All articles · ${n}`, read: m => `${m} min read`, back: "← All articles", by: "The Rich Sis",
+    series: s => s, ctaBtn: "Find my WealthDNA →", ask: "💬 What would you choose?",
+    ig: h => `Tell me why on Instagram ${h} →`, loading: "Loading everyone's choices…", mine: "your pick",
+    total: n => `${n} readers have chosen`, first: "You're the first to choose",
+    reactSame: n => `🙌 You think like ${n}% of readers`, reactFew: n => `✨ You're in the minority — only ${n}% chose this`, reactFirst: "🎉 You're the first to vote!", top: "Most picked", change: "",
+    cTitle: "Comments", cCount: n => `· ${n}`, cName: "Your name (optional)", cBody: "What would you choose, and why?", cHint: "Comments are public",
+    cSend: "Post", cSending: "Posting…", cLoading: "Loading comments…", cEmpty: "No comments yet — be the first ✨",
+    cAnon: "Anonymous reader", cPicked: "Picked", cFail: "Couldn't post — please try again",
+    ago: s => s < 60 ? "just now" : s < 3600 ? `${Math.floor(s/60)}m ago` : s < 86400 ? `${Math.floor(s/3600)}h ago` : `${Math.floor(s/86400)}d ago`,
+    date: d => new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }),
+    siteTitle: "Articles · The Rich Sis", translating: "Translating…", auto: "Auto-translated from Chinese"
+  }
+};
+
+/* ---------- 语言 ---------- */
+const store = {
+  get: k => { try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set: (k, v) => { try { localStorage.setItem(k, v); } catch(e){} }
+};
+let lang = (() => {
+  try { const p = new URLSearchParams(location.search).get("lang"); if (p === "en" || p === "zh") return p; } catch(e){}
+  return store.get("lang") === "en" ? "en" : "zh";
+})();
+const t = () => T[lang];
+
+/* ---------- 自动翻译（没写 en 的文章才会用到） ---------- */
+async function gtChunk(text){
+  const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-CN&tl=en&dt=t&q=" + encodeURIComponent(text);
+  const r = await fetch(url);
+  const data = await r.json();
+  return data[0].map(x => x[0]).join("");
+}
+async function translateLines(lines){
+  const out = new Array(lines.length);
+  const groups = []; let cur = [], len = 0;
+  lines.forEach((l, i) => {
+    if (len + l.length > 350 && cur.length){ groups.push(cur); cur = []; len = 0; }
+    cur.push(i); len += l.length + 1;
+  });
+  if (cur.length) groups.push(cur);
+  await Promise.all(groups.map(async g => {
+    try {
+      const res = (await gtChunk(g.map(i => lines[i]).join("\n"))).split("\n");
+      if (res.length === g.length) g.forEach((i, k) => out[i] = res[k].trim());
+      else await Promise.all(g.map(async i => { out[i] = (await gtChunk(lines[i])).trim(); }));
+    } catch(e){ g.forEach(i => out[i] = lines[i]); }
+  }));
+  return out;
+}
+async function autoEn(a, full){
+  const key = `tr_${full ? "full" : "meta"}_${a.slug}_${a.date}`;
+  const cached = store.get(key);
+  if (cached){ try { return JSON.parse(cached); } catch(e){} }
+  const meta = [a.series, a.title, a.summary];
+  let lines = meta.slice();
+  let bodyLines = [];
+  if (full){
+    bodyLines = a.body.trim().split("\n").map(l => l.trim()).filter(Boolean);
+    lines = lines.concat(
+      [a.cta?.title || "", a.cta?.text || "", a.question || ""],
+      (a.poll || []).map(o => o.label),
+      bodyLines
+    );
+  }
+  const tr = await translateLines(lines);
+  const en = { series: tr[0], title: tr[1], summary: tr[2] };
+  if (full){
+    en.cta = { title: tr[3], text: tr[4] };
+    en.question = tr[5];
+    const pn = (a.poll || []).length;
+    en.poll = tr.slice(6, 6 + pn);
+    en.body = tr.slice(6 + pn).map(l => l.replace(/^[“"](.*)[”"]$/, "「$1」").replace(/\*\*\s*(.+?)\s*\*\*/g, "**$1**")).join("\n");
+  }
+  en.auto = true;
+  store.set(key, JSON.stringify(en));
+  return en;
+}
+async function localize(a, full){
+  if (lang === "zh") return { ...a, auto: false };
+  const en = a.en || await autoEn(a, full);
+  const poll = a.poll ? a.poll.map((o, i) => ({ ...o, label: (en.poll && en.poll[i]) || o.label })) : null;
+  return { ...a, ...en, cta: en.cta || a.cta, poll, auto: !a.en };
+}
+
+/* ---------- 工具 ---------- */
+const app = document.getElementById("app");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+const dnaLink = slug => `${SITE.dnaUrl}?utm_source=articles&utm_medium=article&utm_campaign=${encodeURIComponent(slug || "home")}&utm_content=${lang}`;
+const readMin = body => lang === "zh"
+  ? Math.max(1, Math.round(body.replace(/\s/g, "").length / 400))
+  : Math.max(1, Math.round(body.split(/\s+/).length / 220));
+
+function format(body){
+  const lines = body.trim().split("\n").map(l => l.trim()).filter(Boolean);
+  let html = "", steps = [];
+  const flush = () => { if (steps.length){ html += `<ol class="steps">${steps.join("")}</ol>`; steps = []; } };
+  for (const l of lines){
+    const step = l.match(/^([①②③④⑤⑥⑦⑧⑨])\s*(.*)$/);
+    if (step){ const n = "①②③④⑤⑥⑦⑧⑨".indexOf(step[1]) + 1; steps.push(`<li><b>${n}</b><span>${inline(step[2])}</span></li>`); continue; }
+    flush();
+    if (/^[—\-]{3,}$/.test(l)) html += "<hr>";
+    else if (/^「.*」$/.test(l)) html += `<blockquote>${inline(lang === "en" ? "“" + l.slice(1, -1) + "”" : l)}</blockquote>`;
+    else html += `<p>${inline(l)}</p>`;
+  }
+  flush();
+  return html;
+}
+
+function chrome(){
+  document.documentElement.lang = t().htmlLang;
+  document.getElementById("langBtn").textContent = t().toggle;
+  document.getElementById("navDna").textContent = t().nav;
+}
+
+/* ---------- 页面 ---------- */
+let renderId = 0;
+
+async function home(){
+  const id = ++renderId;
+  document.title = t().siteTitle;
+  document.getElementById("navDna").href = dnaLink("nav");
+  if (lang === "en" && ARTICLES.some(a => !a.en)) app.innerHTML = `<div class="loading-page">${t().translating}</div>`;
+  const list = await Promise.all(ARTICLES.map(a => localize(a, false)));
+  if (id !== renderId) return;
+  app.innerHTML = `
+    <section class="hero">
+      <span class="eyebrow">${t().eyebrow}</span>
+      <h1>${t().h1}</h1>
+      <p>${t().intro}</p>
+    </section>
+    <div class="section-title">${t().all(list.length)}</div>
+    <div class="list">
+      ${list.map(a => `
+        <a class="card" href="#/${a.slug}">
+          <div class="series">${esc(t().series(a.series))}</div>
+          <h2>${esc(a.title)}</h2>
+          <p>${esc(a.summary)}</p>
+          <div class="meta">${t().date(a.date)}${a.auto ? ` · ${t().auto}` : ""}</div>
+        </a>`).join("")}
+    </div>`;
+}
+
+async function article(raw, i){
+  const id = ++renderId;
+  document.getElementById("navDna").href = dnaLink(raw.slug);
+  if (lang === "en" && !raw.en) app.innerHTML = `<div class="loading-page">${t().translating}</div>`;
+  const a = await localize(raw, true);
+  const prev = ARTICLES[i + 1] && await localize(ARTICLES[i + 1], false);
+  const next = ARTICLES[i - 1] && await localize(ARTICLES[i - 1], false);
+  if (id !== renderId) return;
+  document.title = `${a.title} · ${t().by}`;
+  app.innerHTML = `
+    <article class="article">
+      <a class="back" href="#/">${t().back}</a><br>
+      <span class="series">${esc(t().series(a.series))}</span>
+      <h1>${esc(a.title)}</h1>
+      <div class="meta">${t().date(a.date)} · ${t().read(readMin(a.body))} · ${t().by}${a.auto ? `<span class="autonote">${t().auto}</span>` : ""}</div>
+      <div class="body">${format(a.body)}</div>
+
+      <div class="cta">
+        <div class="tag">WEALTHDNA</div>
+        <h3>${esc(a.cta.title)}</h3>
+        <p>${esc(a.cta.text)}</p>
+        <a href="${dnaLink(a.slug)}" target="_blank" rel="noopener">${t().ctaBtn}</a>
+      </div>
+
+      ${a.question ? `
+      <div class="ask">
+        <div class="tag">${t().ask}</div>
+        <div class="q">${esc(a.question)}</div>
+        ${a.poll ? `<div class="poll" id="poll"></div>` : ""}
+      </div>` : ""}
+
+      <section class="comments">
+        <h4>${t().cTitle}<span id="cCount"></span></h4>
+        <form class="cform" id="cform">
+          <input id="cName" maxlength="40" placeholder="${t().cName}">
+          <textarea id="cBody" maxlength="600" placeholder="${t().cBody}" required></textarea>
+          <div class="bottom">
+            <span class="hint">${t().cHint}</span>
+            <button type="submit">${t().cSend}</button>
+          </div>
+        </form>
+        <div class="clist" id="clist"><div class="empty">${t().cLoading}</div></div>
+      </section>
+
+      <div class="more">
+        <span>${prev ? `<a href="#/${prev.slug}">← ${esc(prev.title)}</a>` : ""}</span>
+        <span>${next ? `<a href="#/${next.slug}">${esc(next.title)} →</a>` : ""}</span>
+      </div>
+    </article>`;
+  if (a.poll) poll(a);
+  comments(a);
+}
+
+/* ============================================================
+   投票：存在 WealthDNA 的 Supabase（wealth_poll_responses 表，source = article）
+   中英文读者的票算在一起
+   ============================================================ */
+const SB = {
+  url: "https://djmnchkcfaoqiqkjgzit.supabase.co/rest/v1/wealth_poll_responses",
+  key: "sb_publishable_ojAnQYRVhrkQTJgFYlFBxg_t_encC7M"
+};
+const sbHeaders = { apikey: SB.key, Authorization: "Bearer " + SB.key, "Content-Type": "application/json" };
+
+async function poll(a){
+  const box = document.getElementById("poll");
+  const mine = store.get("poll_voted_" + a.slug);
+  if (mine) return showResults(a, mine);
+  box.innerHTML = a.poll.map(o =>
+    `<button class="opt" data-k="${o.key}"><span class="ico">${o.emoji || o.key}</span><span class="txt">${esc(o.label)}</span></button>`).join("");
+  box.querySelectorAll(".opt").forEach(btn => btn.onclick = async () => {
+    box.querySelectorAll(".opt").forEach(b => b.disabled = true);
+    btn.classList.add("picked");
+    try {
+      await fetch(SB.url, { method: "POST", headers: { ...sbHeaders, Prefer: "return=minimal" },
+        body: JSON.stringify({ poll_id: a.slug, answer: btn.dataset.k, source: lang === "en" ? "article_en" : "article" }) });
+    } catch(e){}
+    store.set("poll_voted_" + a.slug, btn.dataset.k);
+    setTimeout(() => showResults(a, btn.dataset.k), 500);
+  });
+}
+
+async function showResults(a, mine){
+  const box = document.getElementById("poll");
+  box.innerHTML = `<div class="loading">${t().loading}</div>`;
+  let rows = [];
+  try {
+    const r = await fetch(`${SB.url}?select=answer&poll_id=eq.${encodeURIComponent(a.slug)}`, { headers: sbHeaders });
+    rows = await r.json();
+  } catch(e){}
+  if (!Array.isArray(rows)) rows = [];
+  const total = rows.length;
+  const counts = a.poll.map(o => rows.filter(r => r.answer === o.key).length);
+  const mi = a.poll.findIndex(o => o.key === mine);
+  const myPct = total && mi >= 0 ? Math.round(counts[mi] / total * 100) : 0;
+  const react = total <= 1 ? t().reactFirst : (counts[mi] === Math.max(...counts) ? t().reactSame(myPct) : t().reactFew(myPct));
+  box.innerHTML = `<div class="react">${react}</div><div class="cols">` + a.poll.map((o, i) => {
+    const pct = total ? Math.round(counts[i] / total * 100) : 0;
+    const isMe = o.key === mine;
+    return `<div class="col ${isMe ? "me" : ""}">
+      <div class="pct">${pct}%</div>
+      <div class="track"><div class="fill" data-h="${pct}"></div></div>
+      <div class="ico">${o.emoji || o.key}</div>
+      <div class="lbl">${esc(o.label)}</div>
+      ${isMe ? `<div class="you">${t().mine}</div>` : ""}
+    </div>`;
+  }).join("") + `</div><div class="poll-foot">${total ? t().total(total) : t().first}</div>`;
+  setTimeout(() => box.querySelectorAll(".fill").forEach(f => f.style.height = Math.max(4, +f.dataset.h) + "%"), 80);
+}
+
+/* ============================================================
+   留言区：存在 Supabase 的 article_comments 表
+   想隐藏某条留言：到 Supabase → Table Editor → article_comments，把 hidden 打勾
+   ============================================================ */
+const CM_URL = "https://djmnchkcfaoqiqkjgzit.supabase.co/rest/v1/article_comments";
+
+async function loadComments(a){
+  const list = document.getElementById("clist");
+  if (!list) return;
+  let rows = [];
+  try {
+    const r = await fetch(`${CM_URL}?select=name,body,choice,created_at&slug=eq.${encodeURIComponent(a.slug)}&order=created_at.desc&limit=200`, { headers: sbHeaders });
+    rows = await r.json();
+  } catch(e){}
+  if (!Array.isArray(rows)) rows = [];
+  document.getElementById("cCount").textContent = rows.length ? " " + t().cCount(rows.length) : "";
+  const label = k => { const o = (a.poll || []).find(p => p.key === k); return o ? `${o.emoji || ""} ${o.label}` : ""; };
+  list.innerHTML = rows.length ? rows.map(c => {
+    const secs = Math.max(0, (Date.now() - new Date(c.created_at)) / 1000);
+    return `<div class="c">
+      <div class="av">${esc((c.name || "?").trim().charAt(0).toUpperCase())}</div>
+      <div>
+        <div class="who">${esc(c.name)}<small>${t().ago(secs)}</small></div>
+        ${c.choice && label(c.choice) ? `<div class="pick">${t().cPicked} ${esc(label(c.choice))}</div>` : ""}
+        <p>${esc(c.body)}</p>
+      </div>
+    </div>`;
+  }).join("") : `<div class="empty">${t().cEmpty}</div>`;
+}
+
+function comments(a){
+  const form = document.getElementById("cform");
+  const savedName = store.get("comment_name");
+  if (savedName) document.getElementById("cName").value = savedName;
+  form.onsubmit = async e => {
+    e.preventDefault();
+    const btn = form.querySelector("button");
+    const name = document.getElementById("cName").value.trim().slice(0, 40) || t().cAnon;
+    const body = document.getElementById("cBody").value.trim().slice(0, 600);
+    if (!body) return;
+    btn.disabled = true; btn.textContent = t().cSending;
+    let ok = false;
+    try {
+      const r = await fetch(CM_URL, { method: "POST", headers: { ...sbHeaders, Prefer: "return=minimal" },
+        body: JSON.stringify({ slug: a.slug, name, body, choice: store.get("poll_voted_" + a.slug), lang }) });
+      ok = r.ok;
+    } catch(err){}
+    btn.disabled = false; btn.textContent = t().cSend;
+    if (!ok) return alert(t().cFail);
+    if (name !== t().cAnon) store.set("comment_name", name);
+    document.getElementById("cBody").value = "";
+    loadComments(a);
+  };
+  loadComments(a);
+}
+
+/* ---------- 切换页面 ---------- */
+const currentSlug = () => { try { return location.hash.replace(/^#\/?/, ""); } catch(e){ return ""; } };
+function show(slug){
+  chrome();
+  const i = ARTICLES.findIndex(a => a.slug === slug);
+  i >= 0 ? article(ARTICLES[i], i) : home();
+  window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#/"]');
+  if (!a) return;
+  e.preventDefault();
+  const slug = a.getAttribute("href").slice(2);
+  try { history.pushState(null, "", "#/" + slug); } catch(err){}
+  show(slug);
+});
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "zh" ? "en" : "zh";
+  store.set("lang", lang);
+  show(currentSlug());
+});
+window.addEventListener("popstate", () => show(currentSlug()));
+show(currentSlug());
+</script>
+</body>
+</html>
