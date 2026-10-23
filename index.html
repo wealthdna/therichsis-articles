@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>富姐姐的文章 · The Rich Sis</title>
-<meta name="description" content="富姐姐 Andrea Wong 的理财文章：存钱、投资，和那些没人教我们的钱的事。">
-<meta property="og:title" content="富姐姐的文章 · The Rich Sis">
+<title>WealthDNA 财富笔记</title>
+<meta name="description" content="WealthDNA 的财富笔记：存钱、投资，和那些没人教我们的钱的事。">
+<meta property="og:title" content="WealthDNA 财富笔记">
 <meta property="og:description" content="每个普通女生，都值得一个适合自己的财富下一步。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,8 @@
   /* header */
   header{position:sticky;top:0;z-index:10;background:rgba(255,250,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:10px}
-  .brand{font-family:"Noto Serif SC",serif;font-weight:700;font-size:18px;color:var(--purple);white-space:nowrap}
+  .brand{display:flex;align-items:center;gap:8px;font-family:"Noto Sans SC",sans-serif;font-weight:700;font-size:18px;color:var(--ink);white-space:nowrap;letter-spacing:-.01em}
+  .brand .logo{width:26px;height:26px;flex:none}
   .brand small{font-family:"Noto Sans SC",sans-serif;font-weight:500;font-size:12px;color:var(--muted);margin-left:6px;letter-spacing:.04em}
   .right{display:flex;align-items:center;gap:8px}
   .lang{font:inherit;font-size:13px;font-weight:500;color:var(--purple);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
@@ -142,7 +143,7 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#/">富姐姐<small>The Rich Sis</small></a>
+    <a class="brand" href="#/"><svg class="logo" viewBox="0 0 28 28" aria-hidden="true"><path d="M8 3c0 6 12 8 12 11S8 19 8 25" fill="none" stroke="#7C5CC9" stroke-width="2.6" stroke-linecap="round"/><path d="M20 3c0 6-12 8-12 11s12 5 12 11" fill="none" stroke="#FF6535" stroke-width="2.6" stroke-linecap="round"/><path d="M10.5 7.5h7M10.5 20.5h7" stroke="#B49CE8" stroke-width="1.8" stroke-linecap="round"/></svg><span>WealthDNA</span><small>财富笔记</small></a>
     <div class="right">
       <button class="lang" id="langBtn">EN</button>
       <a class="pill" id="navDna" href="#" target="_blank" rel="noopener">测我的财富 DNA</a>
@@ -154,7 +155,7 @@
 
 <footer>
   <div class="wrap">
-    Instagram <a href="https://instagram.com/therichsis39" target="_blank" rel="noopener">@therichsis39</a> · © 2026 The Rich Sis
+    <a href="https://wealthdna-my.netlify.app/?utm_source=articles&utm_medium=footer" target="_blank" rel="noopener">WealthDNA</a> · © 2026
   </div>
 </footer>
 
@@ -238,7 +239,7 @@ EPF RM80,000，当然是她的资产。
 一个普通女生，不需要一开始就拥有 RM100,000、RM500,000。
 但她需要学会做出一个又一个适合自己的财富决定。
 因为财富，就是这样一步一步累积起来的。
-—— Andrea Wong｜富姐姐
+—— WealthDNA
 Your Wealth. Your Next Step. Your Freedom.
 `,
     en: {
@@ -290,7 +291,7 @@ What really matters is knowing which stage your wealth is at, and what your next
 An ordinary woman doesn't need RM100,000 or RM500,000 to begin with.
 But she does need to learn to make one money decision after another that's right for her.
 Because that's how wealth is built — one step at a time.
-—— Andrea Wong | The Rich Sis
+—— WealthDNA
 Your Wealth. Your Next Step. Your Freedom.
 `
     }
@@ -406,10 +407,10 @@ I hope every ordinary woman can find the money moves that fit her own situation,
 const T = {
   zh: {
     toggle: "EN", htmlLang: "zh-Hans", nav: "测我的财富 DNA",
-    eyebrow: "富姐姐的文章",
+    eyebrow: "WealthDNA 财富笔记",
     h1: "每个普通女生，都值得一个<em>适合自己</em>的财富下一步。",
-    intro: "我是 Andrea，富姐姐，CFP 认证理财规划师。这里收录我写的文章——关于存钱、投资，和那些没人教我们的钱的事。",
-    all: n => `全部文章 · ${n} 篇`, read: m => `${m} 分钟阅读`, back: "← 全部文章", by: "富姐姐",
+    intro: "WealthDNA 陪普通女生看懂自己的财富行为，一步一步找到适合自己的下一步。这里收录我们写的财富笔记——关于存钱、投资，和那些没人教我们的钱的事。",
+    all: n => `全部文章 · ${n} 篇`, read: m => `${m} 分钟阅读`, back: "← 全部文章", by: "WealthDNA",
     series: s => `《${s}》`, ctaBtn: "测测我的财富 DNA →", ask: "💬 你会怎么选？",
     ig: h => `想说说为什么？来 Instagram 告诉我 ${h} →`, loading: "正在看大家的选择…", mine: "你的选择",
     total: n => `${n} 位读者做了选择`, first: "你是第一个做选择的人",
@@ -419,14 +420,14 @@ const T = {
     cAnon: "匿名读者", cPicked: "选了", cFail: "发布失败，请再试一次",
     ago: s => s < 60 ? "刚刚" : s < 3600 ? `${Math.floor(s/60)} 分钟前` : s < 86400 ? `${Math.floor(s/3600)} 小时前` : `${Math.floor(s/86400)} 天前`,
     date: d => { const [y,m,day] = d.split("-"); return `${y}年${+m}月${+day}日`; },
-    siteTitle: "富姐姐的文章 · The Rich Sis", translating: "", auto: ""
+    siteTitle: "WealthDNA 财富笔记", translating: "", auto: ""
   },
   en: {
     toggle: "中文", htmlLang: "en", nav: "Find my WealthDNA",
-    eyebrow: "Articles by The Rich Sis",
+    eyebrow: "WealthDNA Notes",
     h1: "Every ordinary woman deserves a next money step that <em>fits her</em>.",
-    intro: "I'm Andrea — The Rich Sis, a Certified Financial Planner. This is where I share what I write about saving, investing, and the money lessons nobody taught us.",
-    all: n => `All articles · ${n}`, read: m => `${m} min read`, back: "← All articles", by: "The Rich Sis",
+    intro: "WealthDNA helps everyday women understand their money behaviour and find the next step that fits them. These are our notes on saving, investing, and the money lessons nobody taught us.",
+    all: n => `All articles · ${n}`, read: m => `${m} min read`, back: "← All articles", by: "WealthDNA",
     series: s => s, ctaBtn: "Find my WealthDNA →", ask: "💬 What would you choose?",
     ig: h => `Tell me why on Instagram ${h} →`, loading: "Loading everyone's choices…", mine: "your pick",
     total: n => `${n} readers have chosen`, first: "You're the first to choose",
@@ -436,7 +437,7 @@ const T = {
     cAnon: "Anonymous reader", cPicked: "Picked", cFail: "Couldn't post — please try again",
     ago: s => s < 60 ? "just now" : s < 3600 ? `${Math.floor(s/60)}m ago` : s < 86400 ? `${Math.floor(s/3600)}h ago` : `${Math.floor(s/86400)}d ago`,
     date: d => new Date(d + "T00:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }),
-    siteTitle: "Articles · The Rich Sis", translating: "Translating…", auto: "Auto-translated from Chinese"
+    siteTitle: "WealthDNA Notes", translating: "Translating…", auto: "Auto-translated from Chinese"
   }
 };
 
